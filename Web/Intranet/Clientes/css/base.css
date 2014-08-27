@@ -1,0 +1,120 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline; }
+		button:active;button:visited{border: none}
+a, a:hover, a:visited, a:active{text-decoration: none;color: none;}
+p{font-family: 'Source Sans Pro', sans-serif;font-size: 13px;font-weight: 400;text-align: justify;}
+h1{font-family: 'Source Sans Pro', sans-serif;font-size: 30px;font-weight: 400;color: #00B4B6}
+h2{font-family: 'Source Sans Pro', sans-serif;font-size: 14px;font-weight: 600;color: #333}
+h3{font-family: 'Source Sans Pro', sans-serif;font-size: 18px;font-weight: 400;color: #fff}
+h4{font-family: 'Source Sans Pro', sans-serif;font-size: 13px;font-weight: 400;color: #555}
+h5{font-family: 'Source Sans Pro', sans-serif;font-size: 18px;font-weight: 400}
+hr{border: 0; width: 100%;color: #999999;background-color: #999999;height: 1px;}
+.tablas{margin:0 auto;display:block;border-collapse: collapse;font-family: 'Source Sans Pro', sans-serif;font-size: 14px;font-weight: 400;}
+.tablas td,tr{border-bottom: 1px solid #c7c7c7}
+.tablas th,.tablas tr,.tablas td{padding:10px 7px}
+.tablas tr:hover{cursor:pointer;background: #ededed}
+.none:hover{background-color: white;cursor: auto;}
+/*SKELETON no modificar*/		
+ 	.container                                  { position: relative; width: 960px; margin: 0 auto; padding: 0; }
+    .container .column,
+    .container .columns                         { float: left; display: inline; margin-left: 10px; margin-right: 10px; }
+    .row                                        { margin-bottom: 20px; }
+    .column.alpha, .columns.alpha               { margin-left: 0; }
+    .column.omega, .columns.omega               { margin-right: 0; }
+    .container .one.column,
+    .container .one.columns                     { width: 40px;  }
+    .container .two.columns                     { width: 100px; }
+    .container .three.columns                   { width: 160px; }
+    .container .four.columns                    { width: 220px; }
+    .container .five.columns                    { width: 280px; }
+    .container .six.columns                     { width: 340px; }
+    .container .seven.columns                   { width: 400px; }
+    .container .eight.columns                   { width: 460px; }
+    .container .nine.columns                    { width: 520px; }
+    .container .ten.columns                     { width: 580px; }
+    .container .eleven.columns                  { width: 640px; }
+    .container .twelve.columns                  { width: 700px; }
+    .container .thirteen.columns                { width: 760px; }
+    .container .fourteen.columns                { width: 820px; }
+    .container .fifteen.columns                 { width: 880px; }
+    .container .sixteen.columns                 { width: 940px; }
+    .container .one-third.column                { width: 300px; }
+    .container .two-thirds.column               { width: 620px; }
+
+/*HEADER*/		
+header{background-image: url(../images/head_01.jpg); width: 100%; height: 180px;-webkit-box-shadow: 0px 3px 7px 0px rgba(50, 50, 50, 0.4);
+-moz-box-shadow:    0px 3px 7px 0px rgba(50, 50, 50, 0.4);box-shadow:         0px 3px 7px 0px rgba(50, 50, 50, 0.4);margin-bottom: 60px}
+header img{margin-top: 8px}
+.menu{margin-top: 140px}
+.menu ul{ display: inline;margin-left: 80px;margin-top: 200px}
+.menu ul li{display: inline;font-family: 'Source Sans Pro', sans-serif;font-weight: 400;list-style: none;color: white;margin-right: 30px}
+.menu ul li:hover{color: #fdf6af}
+.cliente{margin-top: 60px;text-align: right;}
+.cliente h5{color: white;line-height: 130%}
+.cliente a{color: #fdf6af; font-family: 'Source Sans Pro', sans-serif;font-size: 16px;font-weight: 300}
+.cliente a:hover{text-decoration: underline;}
+/*BOTONES*/
+button{cursor:pointer;height: 44px;width: 180px;border-radius: 3px;font-family: 'Source Sans Pro',sans-serif;font-size: 15px}
+.blanco{background:white;border: 1px solid #ab8636; color:#ab8636}
+.blanco:hover{background:#ab8636;border: 1px solid #ab8636; color:#fff}
+.cafe{background: #ab8636;border: 1px solid #836626; color:#fff}
+.cafe:hover,.cumpleanos:hover{background:#8f6f28}
+.cumpleanos {font-family: 'Source Sans Pro', sans-serif;cursor: pointer;width: 250px;height: 60px;background: #ab8636;border: 1px solid #836626; color:#fff}
+.title {padding: 15px 10px;float: left;font-size: 16px;}
+.icon {padding: 5px 0px 0 14px;float: left;border-left: 1px solid #836626;}
+.cargar {font-family: 'Source Sans Pro', sans-serif;cursor: pointer;width: 250px;height: 60px;background: #fff;border: 1px solid #ab8636; color:#ab8636}
+.report {padding: 15px 20px;float: left}
+.cargar:hover{border: 2px solid #ab8636}
+.cargar .icon{border-left: 1px solid #ab8636;padding: 5px 0px 0 20px;}
+/*CAJAS*/
+.cuadro{height: auto;border: 1px solid #999;border-radius: 5px}
+.cuadro h3{padding: 20px}
+.titular{width: 100%;height: 60px;background-color: #00B4B6;border-bottom:1px solid #999}
+.cuadro .tablas{border-collapse: collapse;font-family: 'Source Sans Pro', sans-serif;font-size: 14px;font-weight: 400;padding: 10px 30px}
+.cuadro td,tr{border-bottom: none}
+.cuadro tr:hover{cursor:auto;background: none}
+.cuadro td:nth-of-type(2){padding-left: 40px}
+.line{border-bottom: 1px solid #999}
+
+/*RELOJ*/
+#txt{font-family: 'Source Sans Pro', sans-serif;font-size: 50px;font-weight: 400;text-align: center;padding: 20px 0}
+.alert h3{display: inline;}
+.titular img{display: inline;padding: 20px 0px 0px 20px}
+.cuadro button{ margin: 10px  5px;width: 140px;display: inline;}
+#txt2,#txt3{font-family: 'Source Sans Pro', sans-serif;font-size: 16px;font-weight: 400;padding: 20px 0;display: inline;}
+#txt2{padding-left:68px;}
+#txt3{padding-left:92px;}
+.clock{margin-bottom: 20px}
+.botones{margin-left: 18px;}
+
+/*FORMULARIOS*/
+input{height: 35px;width: 200px;border: 1px solid #ccc; padding-left: 10px;border-radius: 4px;margin: 10px 0}
+textarea, input { outline: none; }
+.buscar{width: 200px;background: url(../images/buscar.png) no-repeat left ;height: 35px;border: 1px solid #ccc; padding-left: 30px;border-radius: 4px; }
+
+.calendario{cursor:pointer;width: 120px;background: url(../images/calendario.png) no-repeat right ;height: 35px;border: 1px solid #ccc; padding-left: 10px;border-radius: 4px}
+.ui-datepicker { width: 280px;padding: 5px;display: none;background: #fff;font-family: 'Source Sans Pro', sans-serif;font-size: 14px;cursor: pointer; border: 1px solid #f1f1f1;border-radius: 3px;margin-top: 120px}
+.ui-datepicker .ui-datepicker-header {position: relative; background: #00B2B8; padding: 20px}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {position: absolute;padding: 0 5px;color: #fff;width: 1.8em;height: 1.8em;font-weight: 400;font-size: 14px}
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {color: #b5dfe0}
+.ui-datepicker .ui-datepicker-prev { left: 10px;}
+.ui-datepicker .ui-datepicker-next {  right: 10px;}
+.ui-datepicker .ui-datepicker-prev span,.ui-datepicker .ui-datepicker-next span { display: block; position: absolute; left: 50%;margin-left: -8px;top: 50%;margin-top: -8px;    }
+.ui-datepicker .ui-datepicker-title {margin: 0 2.3em;line-height: 1.8em;text-align: center;font-size: 16px;color: #fff;}
+.ui-datepicker .ui-datepicker-title select {  font-size: 1em; margin: 1px 0;}
+.ui-datepicker select.ui-datepicker-month,.ui-datepicker select.ui-datepicker-year { width: 49%;}
+.ui-datepicker table {width: 100%;font-size: .9em;border-collapse: collapse;    padding: 20px}
+.ui-datepicker th { padding: .7em .3em;text-align: center; font-weight: bold; border: 0;}
+.ui-datepicker td {border: 1px solid #f1f1f1;padding: 5px}
+.ui-datepicker td span,.ui-datepicker td a {display: block;padding: .2em;text-align: right;text-decoration: none;color: #333}
+.ui-datepicker td span:hover,.ui-datepicker td a:hover {display: block;padding: .2em;text-align: right;text-decoration: none;color: #00B2B8}
+.ui-datepicker .ui-datepicker-buttonpane { background-image: none; margin: .7em 0 0 0;padding: 0 .2em; border-left: 0;border-right: 0;border-bottom: 0;}
+.ui-datepicker .ui-datepicker-buttonpane button {float: right;margin: .5em .2em .4em;cursor: pointer;padding: .2em .6em .3em .6em;width: auto;overflow: visible;}
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current { float: left;}
