@@ -15,17 +15,20 @@
 	<link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="css/slicknav.css">
 <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="js/jquery.glide.js"></script>
-
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic' rel='stylesheet' type='text/css'>
+<script src="js/jquery.geocomplete.js"></script>
+<script src="js/logger.js"></script> 
 <script src="js/jquery.slicknav.js"></script>
 
 </head>
 
 <body>
 	<?php include 'menu.php';?>
+	<?php include 'cotizador.php';?>
+
 
 <section>
 	<div class="container tittle"> 

@@ -22,12 +22,12 @@
 <script src="js/jquery.geocomplete.js"></script>
 <script src="js/logger.js"></script> 
 <script src="js/jquery.slicknav.js"></script>
-
 </head>
 
 <body>
-	<?php include 'menu.php';?>
+		<?php include 'menu.php';?>
 	<?php include 'cotizador.php';?>
+
 
 <section class="servicios" id="largeimage">
 	<div class="container"> <h3> NUESTROS SERVICIOS</h3>	

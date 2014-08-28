@@ -27,15 +27,15 @@
 
 <body>
 	<?php include 'menu.php';?>
-
+	<?php include 'cotizador.php';?>
 
 <section class="contacto" id="largeimage">
 	<div class="container"> <h3> CONTÁCTANOS</h3>
 	
 </div>
 </section>
-<section class="container">
-	<div class=" seven columns">
+<section class="container contactform">
+	<div class="seven columns">
 	<h6>NOS INTERESA CONOCERTE</h6>
 	<form class="cont" name="contact" action="#" method="post">
 	<input type="text" placeholder="Nombre" id="nombre"></input>

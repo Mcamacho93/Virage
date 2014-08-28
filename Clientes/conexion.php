@@ -4,16 +4,16 @@
   //lomas server
     $servidor = "localhost";
     //pc-user:
-    $usuario="root";
+    $usuario="andrea";
     //lomas user
     //$usuario = "lomas_miguel";
     //pc password
-    $contrasena="";
+    $contrasena="pastel";
     //lomas password
          //4529aeie
     //$contrasena = "Virage2014";
     //pc database
-    $BaseDeDatos="virage"; 
+    $BaseDeDatos="lomas_virage"; 
     //lomas database
     //$BaseDeDatos = "lomas_virage";
 

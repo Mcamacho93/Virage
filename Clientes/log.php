@@ -24,6 +24,7 @@ if(isset($_POST["loginbtn"])){
 	}
 	}
 	else{
+		echo "Error".@mysql_escape_string($conexion->error).".... ".$cons;
 		echo '<script>
 		alert("Usuario o Password erroneos, por favor verifique.")
 		self.location = "../Web/login.php"

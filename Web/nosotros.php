@@ -35,8 +35,15 @@
 	<div class="container"> <h3>ACERCA DE NOSOTROS</h3></div>
 </section>
 <section class="container main">
-<div class="eight columns">
-
+	
+<div class="eight columns tamano">
+	<div class="botones">
+<ul class="tabs">
+	<li id="img1"><div class="spacetab">NOSOTROS</div></li>
+	<li id="img2"><div class="spacetab">MISIÓN</div></li>
+	<li id="img3"><div class="spacetab">DISTINTIVO M</div> </li>
+	<li id="img4"><div class="spacetab last">VENTAJAS</div></li>
+</ul></div>
 <div id="div1">
 	<h6>CONÓCENOS</h6>
 	<p>Nuestro trabajo nos ha llevado al liderazgo en la industria y a ser reconocidos por diferentes prestadores de servicios turísticos, lo que nos impulsa a continuar esforzándonos y seguir en el camino a la excelencia de los viajes, poniendo a disposición de nuestros clientes, todas nuestra experiencia y conocimiento.
@@ -61,32 +68,28 @@ Somos profesionales en un mundo donde la competitividad no se detiene con soluci
 </p><p>
 SAP Business One se integra con el Sistema de Distribución Global (GDS) Sabre, globalizador mas importante a nivel internacional,  líder mundial de soluciones de alto desempeño para la industria de viajes, el cual, proporciona un análisis detallado de la actividad de los viajes corporativos al:
 </p>
-<ul>
-	<li><img src="images/arrow.png"><p> Monitorear volúmenes aéreos, hospedaje, servicios terrestres, entre otros. 
+<ul class="flecha">
+	<li><p> Monitorear volúmenes aéreos, hospedaje, servicios terrestres, entre otros. 
 </p></li>
-<li><img src="images/arrow.png"><p> Centralizar e integrar ventas, operaciones y finanzas en un solo reporte.</p></li>
+<li><p> Centralizar e integrar ventas, operaciones y finanzas en un solo reporte.</p></li>
 
-<li><img src="images/arrow.png"><p> Detectar áreas de oportunidad en los gastos de viaje y cumplimiento con la política de viaje.</p></li>
+<li><p> Detectar áreas de oportunidad en los gastos de viaje y cumplimiento con la política de viaje.</p></li>
 
-<li><img src="images/arrow.png"><p> Tomar decisiones acertadas y eficaces recaudando la información en una sola fuente de datos inmediata y actualizada.</p></li>
+<li><p> Tomar decisiones acertadas y eficaces recaudando la información en una sola fuente de datos inmediata y actualizada.</p></li>
 
-<li><img src="images/arrow.png"><p> Conciliar reportes en tiempo real de la actividad del viaje de acuerdo a los requerimientos contables.</p></li>
+<li><p> Conciliar reportes en tiempo real de la actividad del viaje de acuerdo a los requerimientos contables.</p></li>
 
 </ul>
 	<div class="one column"></div>
 	</div>
 	</div>	
-	<div class="eight columns botones">
-		<h6>“EN VIRAGE NOS ESPECIALIZAMOS EN HACER DE LOS SERVICIOS CORPORATIVOS TODA UNA EXPERIENCIA.”</h6>
-<ul>
-	<li id="img1"><div class="circle">NOSOTROS</div></li>
-	<li id="img2"><div class="circle">MISIÓN</div></li>
-	<li id="img3"><div class="circle">DISTINTIVO M</div> </li>
-	<li id="img4"><div class="circle">a</div></li>
-</ul>
-
+	
 
 </div>	
+<div class=" offset-by-one six columns con">
+		<h1>“EN VIRAGE NOS ESPECIALIZAMOS EN HACER DE LOS SERVICIOS CORPORATIVOS TODA UNA EXPERIENCIA.”</h1>
+
+</div>
 		<script type="text/javascript">
 $("#img1").on('click', function() {
    $("#div1").fadeIn();
