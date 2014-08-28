@@ -8,6 +8,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 		button:active;button:visited{border: none}
 a, a:hover, a:visited, a:active{text-decoration: none;color: none;}
 p{font-family: 'Source Sans Pro', sans-serif;font-size: 13px;font-weight: 400;text-align: justify;}
+label{font-family: 'Source Sans Pro', sans-serif;font-size: 15px;font-weight: 400;text-align: justify;margin-right: 10px}
 h1{font-family: 'Source Sans Pro', sans-serif;font-size: 30px;font-weight: 400;color: #00B4B6}
 h2{font-family: 'Source Sans Pro', sans-serif;font-size: 14px;font-weight: 600;color: #333}
 h3{font-family: 'Source Sans Pro', sans-serif;font-size: 18px;font-weight: 400;color: #fff}
@@ -24,37 +25,12 @@ tr.none:hover{background-color: white;cursor: auto;}
 .tablas .w3{width: 30px}
 .tablas .w4{width: 40px}
 
-/*SKELETON no modificar*/		
- 	.container                                  { position: relative; width: 960px; margin: 0 auto; padding: 0; }
-    .container .column,
-    .container .columns                         { float: left; display: inline; margin-left: 10px; margin-right: 10px; }
-    .row                                        { margin-bottom: 20px; }
-    .column.alpha, .columns.alpha               { margin-left: 0; }
-    .column.omega, .columns.omega               { margin-right: 0; }
-    .container .one.column,
-    .container .one.columns                     { width: 40px;  }
-    .container .two.columns                     { width: 100px; }
-    .container .three.columns                   { width: 160px; }
-    .container .four.columns                    { width: 220px; }
-    .container .five.columns                    { width: 280px; }
-    .container .six.columns                     { width: 340px; }
-    .container .seven.columns                   { width: 400px; }
-    .container .eight.columns                   { width: 460px; }
-    .container .nine.columns                    { width: 520px; }
-    .container .ten.columns                     { width: 580px; }
-    .container .eleven.columns                  { width: 640px; }
-    .container .twelve.columns                  { width: 700px; }
-    .container .thirteen.columns                { width: 760px; }
-    .container .fourteen.columns                { width: 820px; }
-    .container .fifteen.columns                 { width: 880px; }
-    .container .sixteen.columns                 { width: 940px; }
-    .container .one-third.column                { width: 300px; }
-    .container .two-thirds.column               { width: 620px; }
+
 
 /*HEADER*/		
 header{background-image: url(../images/head_01.jpg); width: 100%; height: 180px;-webkit-box-shadow: 0px 3px 7px 0px rgba(50, 50, 50, 0.4);
 -moz-box-shadow:    0px 3px 7px 0px rgba(50, 50, 50, 0.4);box-shadow:         0px 3px 7px 0px rgba(50, 50, 50, 0.4);margin-bottom: 60px}
-header img{margin-top: 8px}
+header img{margin-top: 30px;width: 150px}
 .menu{margin-top: 140px}
 .menu ul{ display: inline;margin-left: 80px;margin-top: 200px}
 .menu ul li{display: inline;font-family: 'Source Sans Pro', sans-serif;font-size:14px; font-weight: 400;list-style: none;color: white;margin-right: 30px}
@@ -67,7 +43,7 @@ header img{margin-top: 8px}
 button{cursor:pointer;height: 44px;width: 180px;border-radius: 3px;font-family: 'Source Sans Pro',sans-serif;font-size: 15px}
 .blanco{background:white;border: 1px solid #ab8636; color:#ab8636}
 .blanco:hover{background:#ab8636;border: 1px solid #ab8636; color:#fff}
-.cafe{background: #ab8636;border: 1px solid #836626; color:#fff}
+.cafe{background: #ab8636;border: 1px solid #836626; color:#fff;height: 40px!important;width: auto!important;padding: 0 30px!important;cursor: pointer;}
 .cafe:hover,.cumpleanos:hover{background:#8f6f28}
 .cumpleanos {font-family: 'Source Sans Pro', sans-serif;cursor: pointer;width: 250px;height: 60px;background: #ab8636;border: 1px solid #836626; color:#fff}
 .title {padding: 15px 10px;float: left;font-size: 16px;}
@@ -76,6 +52,7 @@ button{cursor:pointer;height: 44px;width: 180px;border-radius: 3px;font-family: 
 .report {padding: 15px 20px;float: left}
 .cargar:hover{border: 2px solid #ab8636}
 .cargar .icon{border-left: 1px solid #ab8636;padding: 5px 0px 0 20px;}
+.botones
 /*CAJAS*/
 .cuadro{height: auto;border: 1px solid #999;border-radius: 5px}
 .cuadro h3{padding: 20px}
@@ -96,12 +73,12 @@ button{cursor:pointer;height: 44px;width: 180px;border-radius: 3px;font-family: 
 #txt3{padding-left:92px;}
 .clock{margin-bottom: 20px}
 .botones{margin-left: 18px;}
-
+.b input{float: right;margin:20px 10px;}
 /*FORMULARIOS*/
 input{height: 35px;width: 200px;border: 1px solid #ccc; padding-left: 10px;border-radius: 4px;margin: 10px 0}
 textarea, input { outline: none; }
 .buscar{width: 200px;background: url(../images/buscar.png) no-repeat left ;height: 35px;border: 1px solid #ccc; padding-left: 30px;border-radius: 4px; }
-
+.busquedaReportes{height: 200px}
 .calendario{cursor:pointer;width: 120px;background: url(../images/calendario.png) no-repeat right ;height: 35px;border: 1px solid #ccc; padding-left: 10px;border-radius: 4px}
 .ui-datepicker { width: 280px;padding: 5px;display: none;background: #fff;font-family: 'Source Sans Pro', sans-serif;font-size: 14px;cursor: pointer; border: 1px solid #f1f1f1;border-radius: 3px;margin-top: 120px}
 .ui-datepicker .ui-datepicker-header {position: relative; background: #00B2B8; padding: 20px}

@@ -7,11 +7,12 @@ session_start();
 	<meta charset="UTF-8">
 	<title>Virage</title>
 	<link rel="stylesheet" type="text/css" href="css/base.css">
+		<link rel="stylesheet" type="text/css" href="css/skeleton.css">
+
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
 	<link type="text/css" href="css/le-frog/jquery-ui-1.8.1.custom.css" rel="Stylesheet" />  
-	<link type="text/css" rel="stylesheet" href="css/css.css">
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 	<?php include ("conexion.php");?>	
 
@@ -147,9 +148,9 @@ session_start();
 	<div class="icon"><img src="images/sync.png"></div>
 </button>-->
 
-	<form name="filtro" method="get">
-		<div class="container"><h2>FORMULARIO:</h2>
-			
+<form name="filtro" method="get" class="busquedaReportes">
+	<div class="container filtro">
+		<div class="six columns">
 			<label>FECHA DE INICIO: </label><input type="text" placeholder="YY-MM-DD" name="datepicker" id="datepicker" class="calendario" readonly/>
 				<script type="text/javascript">
 					jQuery(function($){
@@ -178,20 +179,26 @@ session_start();
 		   $("#datepicker").datepicker();
 		 });
 		</script>
-		
-		<LABEL>PASAJERO: </LABEL><input placeholder="Buscar" class="buscar" name="buscar" id="buscar"></input>		
-			<br>			
-			<label>PNR: </label></th><th><input placeholder="Buscar por PNR" name="PNR"></input>
-			<br>		
-			<label>EMPRESA:</label><br><input placeholder="Buscar por Empresa" name="Empresa"></input>
-			
-			<input type="submit" class="cafe" name="Busqueda" value="Buscar" style="width:5em; height:2em;"	id="Buscar">
-			<input type="submit" class="cafe" name="Busqueda" value="Mostrar Todo" style="width:7em; height:2em;" id="Mostrar">
 		</div>
+		<div class="offset-by-one nine columns">
+		<label>PASAJERO: </label><input placeholder="Buscar" class="buscar" name="buscar" id="buscar"></input>		
+		</div>
+	</div><!--container-->
 
-		<div class="container">
+	<div class="container">
+			<div class="six columns">
+				<label>PNR: </label></th><th><input placeholder="Buscar por PNR" name="PNR"></input>
+			</div>
+		<div class="offset-by-one nine columns">						
+			<label>EMPRESA:</label><input placeholder="Buscar por Empresa" name="Empresa"></input>
+		</div>
+	</div><!--container-->
+
+	<div class="container sixteen columns b">
+		<input type="submit" class="cafe" name="Busqueda" value="Buscar" style="width:5em; height:2em;"	id="Buscar">
+		<input type="submit" class="cafe" name="Busqueda" value="Mostrar Todo" style="width:7em; height:2em;" id="Mostrar">
+	</div>
 			
-</table>
 </form>
 <!--<button class="cumpleanos"> 
 	<div class="title">Enviar tarjeta de regalo</div>
@@ -203,9 +210,7 @@ session_start();
 	<div class="icon"><img src="images/sync.png"></div>
 </button>-->
 
-<br><br><br>
 
-<br><br><br>
 
 <!--Estilos texto-->
 	<div class="container titulo">
@@ -671,12 +676,12 @@ if (isset($_GET["Busqueda"])){ //Para llenar la tabla dependiendo de lo que se q
 	
             	?>
    
-	<br>
 	
  
 	
 			<!--Esta parte contiene tanto al boton de carga como de descarga del archivo-->
 			<div class="container">
+				<div class="offset-by-six">
 			<form name="importa" method="post"  enctype="multipart/form-data" action="LeerExcel.php" >
 					<input type="file" name="excel" style="width:23em; height:2em;" accept=".xlsx, .xls"/>
 					<input type="submit" name="enviar"  value="Cargar Archivo" class="cafe" style="width:10em; height:2em;"  />
@@ -684,7 +689,7 @@ if (isset($_GET["Busqueda"])){ //Para llenar la tabla dependiendo de lo que se q
 			</form>
 			<a href="ReporteExcel.php" id="link" name="link" ><button class="cafe" name="mostrar" style="width:10em; height:2em;">Descargar Excel</button></a>
 		</div>
-		
+		</div>
 			
 		
 
