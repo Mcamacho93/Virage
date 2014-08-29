@@ -7,13 +7,22 @@ session_start();
 	<meta charset="UTF-8">
 	<title>Virage</title>
 	<link rel="stylesheet" type="text/css" href="css/base.css">
+<<<<<<< HEAD
 	<link rel="stylesheet" type="text/css" href="css/skeleton.css">
+=======
+		<link rel="stylesheet" type="text/css" href="css/skeleton.css">
+
+>>>>>>> origin/master
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
 	<link type="text/css" href="css/le-frog/jquery-ui-1.8.1.custom.css" rel="Stylesheet" />  
+<<<<<<< HEAD
 
 
+=======
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+>>>>>>> origin/master
 	<?php include ("conexion.php");?>	
 
 </head>
