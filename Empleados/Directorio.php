@@ -14,6 +14,7 @@ include ("conexion.php")
 	<link type="text/css" href="css/le-frog/jquery-ui-1.8.1.custom.css" rel="Stylesheet" />  
 	<link type="text/css" rel="stylesheet" href="css/css.css">
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/skeleton.css">
 	<?php include ("conexion.php");?>	
 
 </head>
@@ -49,7 +50,7 @@ include ("conexion.php")
 		  	{
 		     	echo "<br>	
 					  <div class='five columns cliente'>
-					  <h5>".$_SESSION['Nombre']."</h5>	
+					  <h5>".$_SESSION['Nombre']."  ".$_SESSION['Apellido_Paterno']."  ".$_SESSION['Apellido_Materno']."<br>".$_SESSION['Empresa']."</h5>
 				      <a href=' logout.php'>Cerrar Sesión</a>			
 					</div>";
 		  	}
@@ -107,7 +108,7 @@ include ("conexion.php")
 				<td>".$columna['Telefono']."</td>
 				<td>".$columna['Correo']."</td>
 				<td>".$columna['TipoDeUsuario']."</td>
-				<td><a href='Perfil.php?n=$columna[IDUsuario]'><img src='images/flecha.png'></a></td>
+				<td><a href='Perfil.php?n=$columna[IDUsuario]'>Editar<img src='images/flecha.png'></a></td>
 			  <tr>";
 	}
 

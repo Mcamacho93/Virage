@@ -7,12 +7,13 @@ session_start();
 	<meta charset="UTF-8">
 	<title>Virage</title>
 	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/skeleton.css">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
 	<link type="text/css" href="css/le-frog/jquery-ui-1.8.1.custom.css" rel="Stylesheet" />  
-	<link type="text/css" rel="stylesheet" href="css/css.css">
-	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+
 	<?php include ("conexion.php");?>	
 
 </head>
@@ -48,7 +49,7 @@ session_start();
 		  	{
 		     	echo "<br>	
 					  <div class='five columns cliente'>
-					  <h5>".$_SESSION['Nombre']."</h5>	
+					  <h5>".$_SESSION['Nombre']."  ".$_SESSION['Apellido_Paterno']."  ".$_SESSION['Apellido_Materno']."<br>".$_SESSION['Empresa']."</h5>	
 				      <a href=' logout.php'>Cerrar Sesión</a>			
 					</div>";
 		  	}
@@ -63,8 +64,7 @@ session_start();
 		<?php } ?>
 	</header>
 
-<!--<a href='logout.php'>Cerrar Sesión</a>-->
-<!--Titulo de seccion-->
+
 <div class="container titulo">
 	<h1>FILTRAR POR</h1>
 	<hr>
@@ -72,64 +72,6 @@ session_start();
 
 </div>
 
-<!--<form name="filtro" method="get">
-
-		<div class="container"><h2>FORMULARIO:</h2>
-		<table>	
-		<tr><th>	
-		<th><img src="images/Empresas/bimbo.jpg"></th>
-			<tr><th>
-			
-			<th></th>	
-			<th></th>
-			<th><label>FECHA DE INICIO: </label></th><th><input type="text" placeholder="DD/MM/YY" name="datepicker" id="datepicker" class="calendario" readonly="readonly"/></th>
-				<script type="text/javascript">
-					jQuery(function($){
-			      	$.datepicker.regional['es'] = {
-			            closeText: 'Cerrar',
-			            prevText: '&#x3c;',
-			            nextText: '&#x3e;',
-			            currentText: 'Hoy',
-			            monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
-			            'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
-			            monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun',
-			            'Jul','Ago','Sep','Oct','Nov','Dic'],
-			            dayNames: ['Domingo','Lunes','Martes','Mi&eacute;rcoles','Jueves','Viernes','S&aacute;bado'],
-			            dayNamesShort: ['Dom','Lun','Mar','Mi&eacute;','Juv','Vie','S&aacute;b'],
-			            dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','S&aacute;'],
-			            weekHeader: 'Sm',
-			            dateFormat: 'dd/mm/yy',
-			            firstDay: 1,
-			            isRTL: false,
-			            showMonthAfterYear: false,
-			            yearSuffix: ''};
-		     	 $.datepicker.setDefaults($.datepicker.regional['es']);
-				});    
-		 
-		$(document).ready(function() {
-		   $("#datepicker").datepicker();
-		 });
-		</script>
-
-		
-		<th><LABEL>PASAJERO: </LABEL></th><th><input placeholder="Buscar" class="buscar" name="buscar" id="buscar"></input></th>
-		</th></tr>
-		<tr><th>
-			<th></th>
-			<th></th>
-			<th><label>FECHA FIN: </label></th><th><input type="text" placeholder="DD/MM/YY" name="datepicker" id="datepicker" class="calendario" readonly="readonly"/></th>
-			<th><label>PNR: </label></th><th><input placeholder="Buscar por PNR" name="PNR"></input></th>
-		</th></tr>
-			<tr><th>
-			<th><label>Empresa:</label><br><label>Nombre de la Empresa</label><th>
-			<th></th>
-			<th></th>
-			<th><input type="submit" class="cafe" name="Busqueda" value="Buscar"></th>
-			</th></tr>
-		</th></tr>
-		<BR>
-		
-		</div>-->
 
 		<!--<div class="container">-->
 			<!--botones-->
@@ -147,9 +89,9 @@ session_start();
 	<div class="icon"><img src="images/sync.png"></div>
 </button>-->
 
-	<form name="filtro" method="get">
-		<div class="container"><h2>FORMULARIO:</h2>
-			
+<form name="filtro" method="get" class="busquedaReportes">
+	<div class="container filtro">
+		<div class="six columns">
 			<label>FECHA DE INICIO: </label><input type="text" placeholder="YY-MM-DD" name="datepicker" id="datepicker" class="calendario" readonly/>
 				<script type="text/javascript">
 					jQuery(function($){
@@ -178,20 +120,26 @@ session_start();
 		   $("#datepicker").datepicker();
 		 });
 		</script>
-		
-		<LABEL>PASAJERO: </LABEL><input placeholder="Buscar" class="buscar" name="buscar" id="buscar"></input>		
-			<br>			
-			<label>PNR: </label></th><th><input placeholder="Buscar por PNR" name="PNR"></input>
-			<br>		
-			<label>EMPRESA:</label><br><input placeholder="Buscar por Empresa" name="Empresa"></input>
-			
-			<input type="submit" class="cafe" name="Busqueda" value="Buscar" style="width:5em; height:2em;"	id="Buscar">
-			<input type="submit" class="cafe" name="Busqueda" value="Mostrar Todo" style="width:7em; height:2em;" id="Mostrar">
 		</div>
+		<div class="offset-by-one nine columns">
+		<label>PASAJERO: </label><input placeholder="Buscar" class="buscar" name="buscar" id="buscar"></input>		
+		</div>
+	</div><!--container-->
 
-		<div class="container">
+	<div class="container">
+			<div class="six columns">
+				<label>PNR: </label></th><th><input placeholder="Buscar por PNR" name="PNR"></input>
+			</div>
+		<div class="offset-by-one nine columns">						
+			<label>EMPRESA:</label><input placeholder="Buscar por Empresa" name="Empresa"></input>
+		</div>
+	</div><!--container-->
+
+	<div class="container sixteen columns b">
+		<input type="submit" class="cafe" name="Busqueda" value="Buscar" style="width:5em; height:2em;"	id="Buscar">
+		<input type="submit" class="cafe" name="Busqueda" value="Mostrar Todo" style="width:7em; height:2em;" id="Mostrar">
+	</div>
 			
-</table>
 </form>
 <!--<button class="cumpleanos"> 
 	<div class="title">Enviar tarjeta de regalo</div>
@@ -203,9 +151,7 @@ session_start();
 	<div class="icon"><img src="images/sync.png"></div>
 </button>-->
 
-<br><br><br>
 
-<br><br><br>
 
 <!--Estilos texto-->
 	<div class="container titulo">
@@ -283,13 +229,13 @@ if (isset($_GET["Busqueda"])){ //Para llenar la tabla dependiendo de lo que se q
                     
                  		echo "<tr>
                   		<td align='left'> $columna[FECHA] </td>
-                  		<td> $columna[NODOCUMENTO] </td>
-                  		<td> $columna[PNR] </td>
-                  		<td> $columna[NOMBREDEPASAJERO] </td>
-                  		<td> $columna[PROVEEDOR] </td>
-                  		<td> $columna[RUTA1] </td>
-                  		<td> $columna[IMPORTETOTAL] </td>
-                  		<td> $columna[FORMADEPAGO] </td>
+                  		<td>$columna[NODOCUMENTO] </td>
+                  		<td>$columna[PNR] </td>
+                  		<td>$columna[NOMBREDEPASAJERO] </td>
+                  		<td>$columna[PROVEEDOR] </td>
+                  		<td>$columna[RUTA1] </td>
+                  		<td>$ $columna[IMPORTETOTAL] </td>
+                  		<td>$columna[FORMADEPAGO] </td>
                       <td><a href='ReporteadorViajesEmpleados.php?value=$columna[ID]'>Detalles<img src='images/flecha.png'></a></td>
                   		</tr>";
                 	}
@@ -350,13 +296,13 @@ if (isset($_GET["Busqueda"])){ //Para llenar la tabla dependiendo de lo que se q
         		while($columna=$select->fetch_array(MYSQLI_ASSOC)){
         			echo "<tr>
 					<td> $columna[FECHA] </td>
-                  			<td> $columna[NODOCUMENTO] </td>
-                  			<td> $columna[PNR] </td>
-                  			<td> $columna[NOMBREDEPASAJERO] </td>
-                  			<td> $columna[PROVEEDOR] </td>
-                  			<td> $columna[RUTA1] </td>
-                  			<td> $columna[IMPORTETOTAL] </td>
-                  			<td> $columna[FORMADEPAGO] </td>
+                  			<td>$columna[NODOCUMENTO] </td>
+                  			<td>$columna[PNR] </td>
+                  			<td>$columna[NOMBREDEPASAJERO] </td>
+                  			<td>$columna[PROVEEDOR] </td>
+                  			<td>$columna[RUTA1] </td>
+                  			<td>$ $columna[IMPORTETOTAL] </td>
+                  			<td>$columna[FORMADEPAGO] </td>
                       		<td><a href='ReporteadorViajesEmpleados.php?value=$columna[ID]'>Detalles<img src='images/flecha.png'></a></td>
 	                  	</tr>"; 
         		}
@@ -419,13 +365,13 @@ if (isset($_GET["Busqueda"])){ //Para llenar la tabla dependiendo de lo que se q
                     
                 	 		echo "<tr>
                   			<td align='left'> $columna[FECHA] </td>
-                  			<td> $columna[NODOCUMENTO] </td>
-                  			<td> $columna[PNR] </td>
-                  			<td> $columna[NOMBREDEPASAJERO] </td>
-                  			<td> $columna[PROVEEDOR] </td>
-                  			<td> $columna[RUTA1] </td>
-                  			<td> $columna[IMPORTETOTAL] </td>
-                  			<td> $columna[FORMADEPAGO] </td>
+                  			<td>$columna[NODOCUMENTO] </td>
+                  			<td>$columna[PNR] </td>
+                  			<td>$columna[NOMBREDEPASAJERO] </td>
+                  			<td>$columna[PROVEEDOR] </td>
+                  			<td>$columna[RUTA1] </td>
+                  			<td>$ $columna[IMPORTETOTAL] </td>
+                  			<td>$columna[FORMADEPAGO] </td>
                       		<td><a href='ReporteadorViajesEmpleados.php?value=$columna[ID]'>Detalles<img src='images/flecha.png'></a></td>
 	                  		</tr>";
                 		}
@@ -492,13 +438,13 @@ if (isset($_GET["Busqueda"])){ //Para llenar la tabla dependiendo de lo que se q
                     
                  		echo "<tr>
                   		<td align='left'> $columna[FECHA] </td>
-                  		<td> $columna[NODOCUMENTO] </td>
-                  		<td> $columna[PNR] </td>
-                  		<td> $columna[NOMBREDEPASAJERO] </td>
-                  		<td> $columna[PROVEEDOR] </td>
-                  		<td> $columna[RUTA1] </td>
-                  		<td> $columna[IMPORTETOTAL] </td>
-                  		<td> $columna[FORMADEPAGO] </td>
+                  		<td>$columna[NODOCUMENTO] </td>
+                  		<td>$columna[PNR] </td>
+                  		<td>$columna[NOMBREDEPASAJERO] </td>
+                  		<td>$columna[PROVEEDOR] </td>
+                  		<td>$columna[RUTA1] </td>
+                  		<td>$ $columna[IMPORTETOTAL] </td>
+                  		<td>$columna[FORMADEPAGO] </td>
                       <td><a href='ReporteadorViajesEmpleados.php?value=$columna[ID]'>Detalles<img src='images/flecha.png'></a></td>
                   		</tr>";
                 	}
@@ -563,13 +509,13 @@ if (isset($_GET["Busqueda"])){ //Para llenar la tabla dependiendo de lo que se q
                     
                  		echo "<tr>
                   		<td align='left'> $columna[FECHA] </td>
-                  		<td> $columna[NODOCUMENTO] </td>
-                  		<td> $columna[PNR] </td>
-                  		<td> $columna[NOMBREDEPASAJERO] </td>
-                  		<td> $columna[PROVEEDOR] </td>
-                  		<td> $columna[RUTA1] </td>
-                  		<td> $columna[IMPORTETOTAL] </td>
-                  		<td> $columna[FORMADEPAGO] </td>
+                  		<td>$columna[NODOCUMENTO] </td>
+                  		<td>$columna[PNR] </td>
+                  		<td>$columna[NOMBREDEPASAJERO] </td>
+                  		<td>$columna[PROVEEDOR] </td>
+                  		<td>$columna[RUTA1] </td>
+                  		<td>$ $columna[IMPORTETOTAL] </td>
+                  		<td>$columna[FORMADEPAGO] </td>
                       <td><a href='ReporteadorViajesEmpleados.php?value=$columna[ID]'>Detalles<img src='images/flecha.png'></a></td>
                   		</tr>";
                 		
@@ -632,13 +578,13 @@ if (isset($_GET["Busqueda"])){ //Para llenar la tabla dependiendo de lo que se q
                     
                  		echo "<tr>
                   		<td align='left'> $columna[FECHA] </td>
-                  		<td> $columna[NODOCUMENTO] </td>
-                  		<td> $columna[PNR] </td>
-                  		<td> $columna[NOMBREDEPASAJERO] </td>
-                  		<td> $columna[PROVEEDOR] </td>
-                  		<td> $columna[RUTA1] </td>
-                  		<td> $columna[IMPORTETOTAL] </td>
-                  		<td> $columna[FORMADEPAGO] </td>
+                  		<td>$columna[NODOCUMENTO] </td>
+                  		<td>$columna[PNR] </td>
+                  		<td>$columna[NOMBREDEPASAJERO] </td>
+                  		<td>$columna[PROVEEDOR] </td>
+                  		<td>$columna[RUTA1] </td>
+                  		<td>$ $columna[IMPORTETOTAL] </td>
+                  		<td>$columna[FORMADEPAGO] </td>
                       <td><a href='ReporteadorViajesEmpleados.php?value=$columna[ID]'>Detalles<img src='images/flecha.png'></a></td>
                   		</tr>";
                 		
@@ -671,12 +617,12 @@ if (isset($_GET["Busqueda"])){ //Para llenar la tabla dependiendo de lo que se q
 	
             	?>
    
-	<br>
 	
  
 	
 			<!--Esta parte contiene tanto al boton de carga como de descarga del archivo-->
 			<div class="container">
+				<div class="offset-by-six">
 			<form name="importa" method="post"  enctype="multipart/form-data" action="LeerExcel.php" >
 					<input type="file" name="excel" style="width:23em; height:2em;" accept=".xlsx, .xls"/>
 					<input type="submit" name="enviar"  value="Cargar Archivo" class="cafe" style="width:10em; height:2em;"  />
@@ -684,7 +630,7 @@ if (isset($_GET["Busqueda"])){ //Para llenar la tabla dependiendo de lo que se q
 			</form>
 			<a href="ReporteExcel.php" id="link" name="link" ><button class="cafe" name="mostrar" style="width:10em; height:2em;">Descargar Excel</button></a>
 		</div>
-		
+		</div>
 			
 		
 

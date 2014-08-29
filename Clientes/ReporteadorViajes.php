@@ -7,6 +7,7 @@ session_start();
 	<meta charset="UTF-8">
 	<title>Reporteador de Viajes</title>
 	<link rel="stylesheet" href="css/base.css">
+	
 	<?php include ("conexion.php");?>
 </head>
 <body>

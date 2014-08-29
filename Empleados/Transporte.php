@@ -8,18 +8,12 @@ include ("conexion.php")
 	<meta charset="UTF-8">
 	<title>Virage</title>
 	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/skeleton.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/ >
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/ >
-	<script src="js/jquery.js"></script>
-	<script src="js/jquery.datetimepicker.js"></script>
-    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
-	<link type="text/css" href="css/le-frog/jquery-ui-1.8.1.custom.css" rel="Stylesheet" /> 
-	<link type="text/css" rel="stylesheet" href="css/css.css">
-	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-	<script src="js/jquery-ui-1.9.2.custom.min.js" type="text/javascript"></script> -->
+    <script src="js/jquery.datetimepicker.js"></script>
 	
 	
 
@@ -58,7 +52,7 @@ include ("conexion.php")
 		  	{
 		     	echo "<br>	
 					  <div class='five columns cliente'>
-					  <h5>".$_SESSION['Nombre']."</h5>	
+					  <h5>".$_SESSION['Nombre']."  ".$_SESSION['Apellido_Paterno']."  ".$_SESSION['Apellido_Materno']."<br>".$_SESSION['Empresa']."</h5>
 				      <a href=' logout.php'>Cerrar Sesión</a>			
 					</div>";
 		  	}
@@ -73,6 +67,15 @@ include ("conexion.php")
 		<?php } ?>
 	</header>
 
+<?php
+	if(isset($_POST['Trans'])){
+		if($_POST['buscar']==null){
+		echo "<script>alert('Tiene que elegir una empresa para registrar el transporte')
+				self.location = 'Viajes.php'
+				</script>";
+				}
+	}
+?>
 	<div class="container titulo">
 	<h1>Favor de llenar la siguiente información</h1>
 	<hr>
@@ -80,43 +83,51 @@ include ("conexion.php")
 
 
 <div class="container">
-	<form action="#" method="post" name="Transporte" id="Transporte">	
-		<label class="Campos">Nombre del pasajero:</label>
-		<label class="Datos"><?php if(isset($_POST['Trans'])){ echo $_POST['buscar'];} ?></label>
+	<form action="RegistrarTransporte.php" method="post" name="Transporte" id="Transporte">	
+		<label class="Campos">NOBRE DE LA EMPRESA:</label>
+		<input type="text" class="Datos" name="Empresa" value = "<?php if(isset($_POST['Trans'])){ echo $_POST['buscar'];} ?>" readonly>
 		<br>
-		<label class="Campos">Aerolinea:</label>
+		<label class="Campos">NOMBRE:</label>
+		<input type="text" name="Nombre" id="Nombre">
+		<br>
+		<label class="Campos">APELLIDO PATERNO:</label>
+		<input type="text" name="APaterno" id="APaterno">
+		<br>
+		<label class="Campos">APELLINO MATERNO:</label>
+		<input type="text" name="AMaterno" id="AMaterno">
+		<br>
+		<label class="Campos">AEROLINEA:</label>
 		<input type="text" name="Aerolinea" id="Aerolinea" class="ui-autocomplete-input">
-
 		<br>
-		<label class="Campos">Origen:</label>
+		<label class="Campos">ORIGEN:</label>
 		<input type="text" id="Origen" name="Origen" placeholder="Origen del viaje">
 		<br>
-		<label class="Campos">Destino:</label>
+		<label class="Campos">DESTINO:</label>
 		<input type="text" id="Destino" name="Destino" placeholder="Destino del viaje">
 		<br>
-		<label class="Campos">Fecha y Hora de Salida:</label>
+		<label class="Campos">FECHA Y HORA DE SALIDA:</label>
 		<input type="text" id="datetimepicker_mask" name="Fecha" class="InputCrear" onlyread/>
 								<script>
 								$('#datetimepicker_mask').datetimepicker({
-								mask:'9999/19/39 29:59',lang:'es'
+								mask:'9999-19-39 29:59',lang:'es',minDate: 0
 								});
 
 								</script>
 				<br>
 		<br>
-		<label class="Campos">N&uacute;mero de vuelo:</label>
+		<label class="Campos">N&Uacute;MERO DE VUELO:</label>
 		<input type="text" id="Vuelo" name="Vuelo" placeholder="N&uacute;mero de vuelo" autocomplete="on">
 		<br>
-		<label class="Campos">Terminal/Sala:</label>
+		<label class="Campos">TERMINAL/SALA:</label>
 		<input type="text" id="Terminal" name="Terminal">
 		<br>
-		<label class="Campos">Asiento/Clase:</label>
+		<label class="Campos">ASIENTO/CLASE:</label>
 		<input type="text" id="Asiento" name="Asiento">
 		<br>
-		<label class="Campos">Puerta:</label>
+		<label class="Campos">PUERTA:</label>
 		<input type="text" id="Puerta" name="Puerta">
 		<br>
-		<input type="submit" name="RegistrarTransporte" id="RegistrarTransporte" class="blanco">
+		<input type="submit" value="Registrar Transporte" name="RegistrarTransporte" id="RegistrarTransporte" class="blanco">
 	</form>
 	</div>
 <?php
@@ -124,12 +135,13 @@ include ("conexion.php")
 
 $consulta = "select IDUsuario, Empresa from usuarios where TipoDeUsuario = 'Proveedor' order by Empresa ASC";
 $resultados1 = $conexion->query($consulta);
+$conexion->close();
 $aerolineas = array();
 if($resultados1->num_rows==0)
    array_push($aerolineas, "No hay datos");
 else{
   while($columna = $resultados1->fetch_array(MYSQLI_ASSOC)){
-    array_push($aerolineas, $columna['Empresa']);
+    array_push($aerolineas, $columna["Empresa"]);
     
   }
 }
@@ -144,8 +156,8 @@ else{
      for($i = 0;$i < count($aerolineas); $i++){ //usamos count para saber cuantos elementos hay ?>
        autocompletarr.push('<?php echo $aerolineas[$i]; ?>');
      <?php } ?>
-     $('#Aerolinea').autocomplete({ //Usamos el ID de la caja de texto donde lo queremos
-       source: autocompletar1 //Le decimos que nuestra fuente es el arreglo
+     $("#Aerolinea").autocomplete({ //Usamos el ID de la caja de texto donde lo queremos
+       source: autocompletarr //Le decimos que nuestra fuente es el arreglo
      });
   });
 </script>

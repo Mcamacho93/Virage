@@ -12,7 +12,7 @@ session_start();
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
 	<link type="text/css" href="css/le-frog/jquery-ui-1.8.1.custom.css" rel="Stylesheet" />  
 	<link type="text/css" rel="stylesheet" href="css/css.css">
-	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
 	<?php include ("conexion.php");?>	
 
 </head>
@@ -72,80 +72,6 @@ session_start();
 
 </div>
 
-<!--<form name="filtro" method="get">
-
-		<div class="container"><h2>FORMULARIO:</h2>
-		<table>	
-		<tr><th>	
-		<th><img src="images/Empresas/bimbo.jpg"></th>
-			<tr><th>
-			
-			<th></th>	
-			<th></th>
-			<th><label>FECHA DE INICIO: </label></th><th><input type="text" placeholder="DD/MM/YY" name="datepicker" id="datepicker" class="calendario" readonly="readonly"/></th>
-				<script type="text/javascript">
-					jQuery(function($){
-			      	$.datepicker.regional['es'] = {
-			            closeText: 'Cerrar',
-			            prevText: '&#x3c;',
-			            nextText: '&#x3e;',
-			            currentText: 'Hoy',
-			            monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
-			            'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
-			            monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun',
-			            'Jul','Ago','Sep','Oct','Nov','Dic'],
-			            dayNames: ['Domingo','Lunes','Martes','Mi&eacute;rcoles','Jueves','Viernes','S&aacute;bado'],
-			            dayNamesShort: ['Dom','Lun','Mar','Mi&eacute;','Juv','Vie','S&aacute;b'],
-			            dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','S&aacute;'],
-			            weekHeader: 'Sm',
-			            dateFormat: 'dd/mm/yy',
-			            firstDay: 1,
-			            isRTL: false,
-			            showMonthAfterYear: false,
-			            yearSuffix: ''};
-		     	 $.datepicker.setDefaults($.datepicker.regional['es']);
-				});    
-		 
-		$(document).ready(function() {
-		   $("#datepicker").datepicker();
-		 });
-		</script>
-
-		
-		<th><LABEL>PASAJERO: </LABEL></th><th><input placeholder="Buscar" class="buscar" name="buscar" id="buscar"></input></th>
-		</th></tr>
-		<tr><th>
-			<th></th>
-			<th></th>
-			<th><label>FECHA FIN: </label></th><th><input type="text" placeholder="DD/MM/YY" name="datepicker" id="datepicker" class="calendario" readonly="readonly"/></th>
-			<th><label>PNR: </label></th><th><input placeholder="Buscar por PNR" name="PNR"></input></th>
-		</th></tr>
-			<tr><th>
-			<th><label>Empresa:</label><br><label>Nombre de la Empresa</label><th>
-			<th></th>
-			<th></th>
-			<th><input type="submit" class="cafe" name="Busqueda" value="Buscar"></th>
-			</th></tr>
-		</th></tr>
-		<BR>
-		
-		</div>-->
-
-		<!--<div class="container">-->
-			<!--botones-->
-			<!--<button class="blanco" name="mostrar">Mostrar Todo</button>-->
-			<!--<input type="submit" name="Busqueda" class="blanco" value="Mostrar Todo">-->
-<!--</table>
-</form>-->
-<!--<button class="cumpleanos"> 
-	<div class="title">Enviar tarjeta de regalo</div>
-	<div class="icon"><img src="images/gift.png"></div>
-</button>-->
-
-<!--<button class="cargar">
-	<div class="report">Cargar reporteador</div>
-	<div class="icon"><img src="images/sync.png"></div>
-</button>-->
 
 	<form name="filtro" method="get">
 		<div class="container"><h2>FORMULARIO:</h2>

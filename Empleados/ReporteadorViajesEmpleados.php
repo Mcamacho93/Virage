@@ -7,6 +7,7 @@ session_start();
 	<meta charset="UTF-8">
 	<title>Reporteador de Viajes</title>
 	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/skeleton.css">
 	<?php include ("conexion.php");?>
 </head>
 <body>
@@ -36,7 +37,7 @@ session_start();
 					<a href=""><li>NOTICIAS</li></a>
 					<a href="ReportesEmpleados.php"><li>REPORTES EN LÍNEA</li></a>
 					<a href="Viajes.php"><li>VIAJES</li></a>
-					<a href="Directorio.php"><li>Directorio</li></a>
+					<a href="Directorio.php"><li>DIRECTORIO</li></a>
 				</ul>
 			</div>
 			<?php
@@ -46,7 +47,7 @@ session_start();
 		  	{
 		     	echo "<br>	
 					  <div class='five columns cliente'>
-					  <h5>".$_SESSION['Nombre']."</h5>	
+					  <h5>".$_SESSION['Nombre']."  ".$_SESSION['Apellido_Paterno']."  ".$_SESSION['Apellido_Materno']."<br>".$_SESSION['Empresa']."</h5>
 				      <a href='logout.php'>Cerrar Sesión</a>			
 					</div>";
 		  	}

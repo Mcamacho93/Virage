@@ -8,17 +8,12 @@ include ("conexion.php")
 	<meta charset="UTF-8">
 	<title>Virage</title>
 	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/skeleton.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/ >
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
-    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
-	<link type="text/css" href="css/le-frog/jquery-ui-1.8.1.custom.css" rel="Stylesheet" /> 
-	<link type="text/css" rel="stylesheet" href="css/css.css">
-	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-	<script src="js/jquery-ui-1.9.2.custom.min.js" type="text/javascript"></script> -->
-	
-	
+    <script src="js/jquery.datetimepicker.js"></script>
 
 	<?php include ("conexion.php");?>	
 
@@ -55,7 +50,7 @@ include ("conexion.php")
 		  	{
 		     	echo "<br>	
 					  <div class='five columns cliente'>
-					  <h5>".$_SESSION['Nombre']."</h5>	
+					  <h5>".$_SESSION['Nombre']."  ".$_SESSION['Apellido_Paterno']."  ".$_SESSION['Apellido_Materno']."<br>".$_SESSION['Empresa']."</h5>
 				      <a href=' logout.php'>Cerrar Sesión</a>			
 					</div>";
 		  	}
@@ -81,11 +76,19 @@ include ("conexion.php")
 	<label class="Campos">NOMBRE: </label>	
 	<input type="text" name="buscar" id="buscar" style="width:300px;" class="ui-autocomplete-input">
 	<br>
-	<label class="Campos">ID:</label>
-	<label class="Datos"><?php if(isset($_POST['buscar'])){ echo $_POST['buscar'];}else{echo "Nada";} ?></label>
-	<br>
+
 	<label class="Campos">FECHA DE SALIDA: </label>
 	<input type="text" placeholder="Fecha" name="Fecha" id="Fecha" readonly> <br>
+	<script type="text/javascript">
+		$('#Fecha').datetimepicker({
+		
+		lang:'es',
+		timepicker:false,
+		format:'Y-m-d',
+		formatDate:'Y-m-d',
+		minDate:0, // yesterday is minimum date
+		});
+	</script>
 	<button type="submit" class="cargar" style="width:250px; height:50px;" name="Trans">
 	<div class="report">Agregar Transporte</div>
 	<div class="icon"><img src="images/sync.png"></div>
@@ -124,6 +127,5 @@ else{
 </script>
 
 
-<div class="container">
-
-</div>
+</body>
+</html>

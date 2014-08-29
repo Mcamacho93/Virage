@@ -7,6 +7,7 @@ include ("conexion.php")
 <head>
 	<meta charset="UTF-8">
 	<title>Virage</title>
+	<link rel="stylesheet" type="text/css" href="css/skeleton.css">
 	<link rel="stylesheet" type="text/css" href="css/base.css">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
@@ -49,7 +50,7 @@ include ("conexion.php")
 		  	{
 		     	echo "<br>	
 					  <div class='five columns cliente'>
-					  <h5>".$_SESSION['Nombre']."</h5>	
+					  <h5>".$_SESSION['Nombre']."  ".$_SESSION['Apellido_Paterno']."  ".$_SESSION['Apellido_Materno']."<br>".$_SESSION['Empresa']."</h5>
 				      <a href=' logout.php'>Cerrar Sesión</a>			
 					</div>";
 		  	}
@@ -87,41 +88,70 @@ include ("conexion.php")
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<input type="text" name="Nombre" class="InputCrear" value="<?php echo $columna['Nombre'] ?>">
 	<br>
+	<label class="Campos">APELLIDO PATERNO:</label>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" name="APaterno" class="InputCrear" value="<?php echo $columna['Apellido_Paterno'] ?>" maxlenght="30" required>
+	<br>
+	<label class="Campos">APELLIDO MATERNO:</label>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" name="AMaterno" class="InputCrear" value="<?php echo $columna['Apellido_Materno'] ?>" maxlenght="30" required>
+	<br>
 	<label class="Campos">EMPRESA:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Empresa" class="InputCrear" value="<?php echo $columna['Empresa'] ?>">
+	<input type="text" name="Empresa" class="InputCrear" value="<?php echo $columna['Empresa'] ?>" maxlenght="60" required>
 	<br>
 	<label class="Campos">EDAD:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Edad" class="InputCrear" value="<?php echo $columna['Edad'] ?>">
+	<input type="number" name="Edad" class="InputCrear" value="<?php echo $columna['Edad'] ?>" maxlenght="3" required>
 	<br>
-	<label class="Campos">SEXO:</label>
+	<label class="Campos" id="labs">SEXO:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Sexo" class="InputCrear" value="<?php echo $columna['Sexo'] ?>">
+	<input type="text" name="Sexo" id="Sexo" class="InputCrear" value="<?php echo $columna['Sexo'] ?>" maxlenght="10" required>
+	&nbsp;&nbsp;&nbsp;&nbsp;
 	<br>
 	<label class="Campos">TEL&Eacute;FONO:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Telefono" class="InputCrear" value="<?php echo $columna['Telefono'] ?>">
+	<input type="number" name="Telefono" class="InputCrear" value="<?php echo $columna['Telefono'] ?>" maxlenght="11" required>
 	<br>
 	<label class="Campos">CORREO ELECTR&Oacute;NICO:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Correo" class="InputCrear" value="<?php echo $columna['Correo'] ?>">
+	<input type="text" name="Correo" class="InputCrear" value="<?php echo $columna['Correo'] ?>" maxlenght="50" required>
 	<br>
-	<label class="Campos">CUMPLEAÑOS:</label>
+	<label class="Campos">FECHA DE NACIMIENTO:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Cumpleanos" class="InputCrear" value="<?php echo $columna['FechaDeNacimiento'] ?>">
+	<input type="text" name="FC" class="InputCrear" value="<?php echo $columna['FechaDeNacimiento'] ?>">
 	<br> 
-	<label class="Campos">CALLE Y N&Uacute;M:</label>
+	<label class="Campos">CALLE:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Calle" class="InputCrear" value="<?php echo $columna['Calle_Numero'] ?>">
+	<input type="text" name="Calle" class="InputCrear" value="<?php echo $columna['Calle'] ?>" maxlenght="50" required>
 	<br>
-	<label class="Campos">CIUDAD Y ESTADO:</label>
+	<label class="Campos">N&Uacute;M:</label>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="number" name="Numero" class="InputCrear" value="<?php echo $columna['Numero'] ?>" maxlenght="10" required>
+	<br>
+	<label class="Campos">COLONIA:</label>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" name="Colonia" class="InputCrear" value="<?php echo $columna['Colonia'] ?>" maxlenght="40" required>
+	<br>
+	<label class="Campos">DELEGACION:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Ciudad" class="InputCrear" value="<?php echo $columna['Ciudad_Estado'] ?>">
+	<input type="text" name="Delegacion" class="InputCrear" value="<?php echo $columna['Delegacion'] ?>" maxlenght="30" required>
+	<br>
+	<label class="Campos">CODIGO POSTAL:</label>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="number" name="CodigoPostal" class="InputCrear" value="<?php echo $columna['CodigoPostal'] ?>" maxlenght="10" required>
+	<br>
+	<label class="Campos">CIUDAD:</label>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" name="Ciudad" class="InputCrear" value="<?php echo $columna['Ciudad'] ?>" maxlenght="50" required>
+	<br>
+	<label class="Campos">ESTADO:</label>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" name="Estado" class="InputCrear" value="<?php echo $columna['Estado'] ?>" maxlenght="30" required>
 	<br>
 	<label class="Campos">PA&Iacute;S:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Pais" class="InputCrear" value="<?php echo $columna['Pais'] ?>">	
+	<input type="text" name="Pais" class="InputCrear" value="<?php echo $columna['Pais'] ?>" maxlenght="30" required>	
 	<br>
 	<label class="Campos">IMAGEN DE PERFIL ACTUAL:</label>
 	<BR>
@@ -149,20 +179,27 @@ if(isset($_POST['Registrar'])){
 	$Usuario = $_POST['Usuario'];
 	$Contrasena = $_POST['Contrasena'];
 	$Nombre = $_POST['Nombre'];
+	$Apellido_Paterno = $_POST['APaterno'];
+	$Apellido_Materno = $_POST['AMaterno'];
 	$Empresa = $_POST['Empresa'];
 	$Edad = $_POST['Edad'];
 	$Sexo = $_POST['Sexo'];
 	$Telefono = $_POST['Telefono'];
 	$Calle = $_POST['Calle'];
+	$Numero = $_POST['Numero'];
+	$Colonia = $_POST['Colonia'];
+	$Delegacion = $_POST['Delegacion'];
+	$CodigoPostal = $_POST['CodigoPostal'];
 	$Ciudad = $_POST['Ciudad'];
 	$Pais = $_POST['Pais'];
-	$Cumpleanos = $_POST['Cumpleanos'];
+	$FC = $_POST['FC'];
 	$Correo = $_POST['Correo'];
 	$Notas = $_POST['Notas'];
 
-	$Modificar = "Update usuarios set Usuario = '".$Usuario."', Contrasena = '".$Contrasena."', Nombre = '".$Nombre."', Empresa = '".$Empresa."',
-				Edad = ".$Edad.", Sexo = '".$Sexo."', Telefono = ".$Telefono.", Calle_Numero = '".$Calle."', Ciudad_Estado = '".$Ciudad."',
-				Pais = '".$Pais."', FechaDeNacimiento = '".$Cumpleanos."', Correo = '".$Correo."' where IDUsuario = ".$_GET['n']."";
+	$Modificar = "Update usuarios set Usuario = '".$Usuario."', Contrasena = '".$Contrasena."', Nombre = '".$Nombre."', Apellido_Paterno = '".$Apellido_Paterno."',
+				Apellido_Materno = '".$Apellido_Materno."', Empresa = '".$Empresa."', Edad = ".$Edad.", Sexo = '".$Sexo."', Telefono = ".$Telefono.", 
+				Calle = '".$Calle."', Numero = ".$Numero.", Colonia = '".$Colonia."', Delegacion = '".$Delegacion."', CodigoPostal = ".$CodigoPostal.",
+				Ciudad = '".$Ciudad."',Pais = '".$Pais."', FechaDeNacimiento = '".$FC."', Correo = '".$Correo."', Notas = '".$Notas."' where IDUsuario = ".$_GET['n']."";
 
 	if($conexion->query($Modificar)){
 		echo "<script>alert('Perfil Actualizado')

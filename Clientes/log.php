@@ -18,12 +18,12 @@ if(isset($_POST["loginbtn"])){
 		$_SESSION['Img']=$columna["RutaImg"];
 
 		echo '<script>
-		alert("Bienvenido!")
 		self.location = "Reportes.php"
 		</script>';
 	}
 	}
 	else{
+		echo "Error".@mysql_escape_string($conexion->error).".... ".$cons;
 		echo '<script>
 		alert("Usuario o Password erroneos, por favor verifique.")
 		self.location = "../Web/login.php"
@@ -41,9 +41,12 @@ if(isset($_POST["loginbtn"])){
 		
 		$_SESSION['Usuario']=$columna["IDUsuario"];
 		$_SESSION['Nombre'] = $columna["Nombre"];
+		$_SESSION['Apellido_Paterno'] = $columna["Apellido_Paterno"];
+		$_SESSION['Apellido_Materno'] = $columna["Apellido_Materno"];
+		$_SESSION['Empresa'] = $columna['Empresa'];
 
 		echo '<script>
-		alert("Bienvenido!")
+		
 		self.location = "../Empleados/ReportesEmpleados.php"
 		</script>';
 	}

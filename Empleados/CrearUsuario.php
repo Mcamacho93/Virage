@@ -6,6 +6,12 @@
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
 	<title>Usuario Nuevo</title>
 	<link rel="stylesheet" type="text/css" href="css/base.css">
+	 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+	<link type="text/css" href="css/le-frog/jquery-ui-1.8.1.custom.css" rel="Stylesheet" />  
+	<link rel="stylesheet" type="text/css" href="css/skeleton.css">
+
 </head>
 <body>
 	<header>
@@ -28,7 +34,7 @@
 		  	{
 		     	echo "<br>	
 					  <div class='five columns cliente'>
-					  <h5>".$_SESSION['Nombre']."</h5>	
+					  <h5>".$_SESSION['Nombre']."  ".$_SESSION['Apellido_Paterno']."  ".$_SESSION['Apellido_Materno']."<br>".$_SESSION['Empresa']."</h5>
 				      <a href=' logout.php'>Cerrar Sesión</a>			
 					</div>";
 		  	}
@@ -47,8 +53,9 @@
 	<h1>CREAR USUARIO</h1>
 	<hr>
 </div>
-<form id="UsuarioNuevo" name="UsuarioNuevo" method="post" action="RegistroNuevo.php" enctype="multipart/form-data">
 <div class="container">
+<form id="UsuarioNuevo" name="UsuarioNuevo" method="post" action="RegistroNuevo.php" enctype="multipart/form-data">
+
 	<label class="Campos">TIPO DE USUARIO:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	<select name="TipoDeUsuario" id="TipoDeUsuario">
@@ -60,51 +67,83 @@
 	<br>
 	<label class="Campos">USUARIO:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Usuario" class="InputCrear">
+	<input type="text" name="Usuario" class="InputCrear" maxlength="20" required>
 	<br>
 	<label class="Campos">CONTRASEÑA:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Contrasena" class="InputCrear">
+	<input type="text" name="Contrasena" class="InputCrear" maxlength="20" required>
 	<br>
 	<label class="Campos">NOMBRE:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Nombre" class="InputCrear">
+	<input type="text" name="Nombre" class="InputCrear" maxlenght="40" required>
+	<br>
+	<label class="Campos">APELLIDO PATERNO:</label>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" name="APaterno" class="InputCrear" maxlenght="30" required>
+	<br>
+	<label class="Campos">APELLIDO MATERNO:</label>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" name="AMaterno" class="InputCrear" maxlenght="30" required>
 	<br>
 	<label class="Campos">EMPRESA:</label>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Empresa" class="InputCrear">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" name="Empresa" class="InputCrear" maxlenght="60" required>
 	<br>
 	<label class="Campos">EDAD:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Edad" class="InputCrear">
+	<input type="number" name="Edad" class="InputCrear" maxlenght="3" required>
 	<br>
 	<label class="Campos">SEXO:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Sexo" class="InputCrear">
+	<select name="Sexo" id="Sexo" class="InputCrear">
+		<option value="Femenino">Femenino</option>
+		<option value="Masculino">Masculino</option>
+	</select>
 	<br>
 	<label class="Campos">TEL&Eacute;FONO:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Telefono" class="InputCrear">
+	<input type="number" name="Telefono" class="InputCrear"  maxlenght="11" required>
 	<br>
 	<label class="Campos">CORREO ELECTR&Oacute;NICO:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Correo" class="InputCrear">
+	<input type="email" name="Correo" class="InputCrear" maxlenght="50" required>
 	<br>
-	<label class="Campos">CUMPLEAÑOS:</label>
+	<label class="Campos">FECHA DE NACIMIENTO:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Cumpleanos" class="InputCrear">
+	<input type="text" name="FC" id="FC" class="InputCrear" required readonly>
 	<br>
-	<label class="Campos">CALLE Y N&Uacute;M:</label>
+	
+	<label class="Campos">CALLE:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Calle" class="InputCrear">
+	<input type="text" name="Calle" class="InputCrear" maxlenght="40" required>
 	<br>
-	<label class="Campos">CIUDAD Y ESTADO:</label>
+	<label class="Campos">N&Uacute;MERO:</label>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="number" name="Numero" class="InputCrear" maxlenght="10" required>
+	<br>
+	<label class="Campos">COLONIA:</label>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" name="Colonia" class="InputCrear" maxlenght="40" required>
+	<br>
+	<label class="Campos">DELEGACION:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Ciudad" class="InputCrear">
+	<input type="text" name="Delegacion" class="InputCrear" maxlenght="30" required>
+	<br>
+	<label class="Campos">CODIGO POSTAL:</label>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="number" name="CodigoPostal" class="InputCrear" maxlenght="10" required>
+	<br>
+	<label class="Campos">CIUDAD:</label>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" name="Ciudad" class="InputCrear" maxlenght="30" required>
+	<br>
+	<label class="Campos">ESTADO:</label>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" name="Estado" class="InputCrear" maxlenght="30" required>
 	<br>
 	<label class="Campos">PA&Iacute;S:</label>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" name="Pais" class="InputCrear">
+	<input type="text" name="Pais" class="InputCrear"  maxlenght="30" required>
 	<br>
 			
 		<input type="file" id="img" name="img"/><br/>
@@ -180,7 +219,7 @@
 		<textarea class="notas" name="Notas"></textarea>
 		<br>
 		<input type="submit" name="Registrar" value="Guardar" class="blanco">
-		<input type="hidden" value="upload" name="action" />	
+		
 	</div>
 </form>	
 	
