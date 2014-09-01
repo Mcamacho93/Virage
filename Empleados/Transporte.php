@@ -99,22 +99,45 @@ include ("conexion.php")
 		<label class="Campos">AEROLINEA:</label>
 		<input type="text" name="Aerolinea" id="Aerolinea" class="ui-autocomplete-input">
 		<br>
-		<label class="Campos">ORIGEN:</label>
+		<label class="Campos">AEROPUERTO DE ORIGEN:</label>
 		<input type="text" id="Origen" name="Origen" placeholder="Origen del viaje">
 		<br>
-		<label class="Campos">DESTINO:</label>
+		<label class="Campos">AEROPUERTO DE DESTINO:</label>
 		<input type="text" id="Destino" name="Destino" placeholder="Destino del viaje">
 		<br>
+		<label class="Campos">TIPO DE VUELO:</label>
+		<select name="TIPOV" id="TIPOV" class="InputCrear">
+			<option value="Sencillo">SENCILLO</option>
+			<option value="Redondo">REDONDO</option>
+		</select>
+		<br>
+		<script type="text/javascript">
+			
+			var posicion=document.getElementById('TIPOV').options.selectedIndex; //posicion
+			var actual = document.getElementById('TIPOV').options[posicion].text);//valor
+			if(actual=='Sencillo'){
+				document.getElementById('datetimepicker').style.display = 'block';
+			}
+
+		</script>
 		<label class="Campos">FECHA Y HORA DE SALIDA:</label>
-		<input type="text" id="datetimepicker_mask" name="Fecha" class="InputCrear" onlyread/>
+		<input type="text" id="datetimepicker_mask" name="Fecha" class="InputCrear" />
 								<script>
 								$('#datetimepicker_mask').datetimepicker({
 								mask:'9999-19-39 29:59',lang:'es',minDate: 0
 								});
 
 								</script>
-				<br>
 		<br>
+		<label class="Campos" style="display:none">FECHA Y HORA DE REGRESO:</label>
+		<input type="text" id="datetimepicker" name="Fecha" class="InputCrear" style="display:none"/>
+								<script>
+								$('#datetimepicker').datetimepicker({
+								mask:'9999-19-39 29:59',lang:'es',minDate: 0
+								});
+
+								</script>
+				<br>		
 		<label class="Campos">N&Uacute;MERO DE VUELO:</label>
 		<input type="text" id="Vuelo" name="Vuelo" placeholder="N&uacute;mero de vuelo" autocomplete="on">
 		<br>

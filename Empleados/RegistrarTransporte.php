@@ -16,8 +16,8 @@
 		$Puerta = $_POST['Puerta'];
 		$Fecha = str_replace("/", "-", $Fecha_Hora);
 
-		$NuevoTransporte = "insert into transporte (Folio, Nombre_Empresa, Nombre, Apellido_Paterno, Apellido_Materno, Aerolinea, Origen, Destino, Fecha_Hora, NumeroDeVuelo,
-						Terminal_Sala, Asiento_Clase, Puerta) values ('', '".$Empresa."', '".$Nombre."', '".$Apellido_Paterno."', '".$Apellido_Materno."', 
+		$NuevoTransporte = "insert into transporte (Folio, Fecha_Hora_Creacion, Nombre_Empresa, Nombre, Apellido_Paterno, Apellido_Materno, Aerolinea, Origen, Destino, Fecha_Hora, NumeroDeVuelo,
+						Terminal_Sala, Asiento_Clase, Puerta) values ('', '',  '".$Empresa."', '".$Nombre."', '".$Apellido_Paterno."', '".$Apellido_Materno."', 
 						'".$Aerolinea."', '".$Origen."', '".$Destino."', '".$Fecha."', ".$Vuelo.", '".$Terminal."', '".$Asiento."', '".$Puerta."')";
 		if($conexion->query($NuevoTransporte)){
 			echo "<script>alert('Transporte Agregado')

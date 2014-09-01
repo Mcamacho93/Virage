@@ -6,7 +6,7 @@ if ($_FILES['excel']['error'] > 0){
 	//echo "Error: ".$_FILES['excel']['error']."<br>";
 	if($_FILES['excel']['error'] == 4){
 		echo "<script>alert('Seleccione el archivo a subir')
-			  self.location = 'Reportes.php'
+			  self.location = 'ReportesEmpleados.php'
 		</script>";
 	}
 	else{

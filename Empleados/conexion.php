@@ -2,13 +2,13 @@
   //pc server
   $servidor= "localhost";
   //lomas server
-    $servidor = "localhost";
+    //$servidor = "localhost";
     //pc-user:
     $usuario="root";
     //lomas user
     //$usuario = "lomas_miguel";
     //pc password
-    $contrasena="";
+    $contrasena="Virage";
     //lomas password
          //4529aeie
     //$contrasena = "Virage2014";
@@ -17,8 +17,8 @@
     //lomas database
     //$BaseDeDatos = "lomas_virage";
 
-    /*
-     //lomas server
+    
+    /* //lomas server
     $servidor = "localhost";
     //lomas user
     $usuario = "lomas_miguel";

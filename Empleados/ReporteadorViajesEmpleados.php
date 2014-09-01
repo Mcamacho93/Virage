@@ -3,8 +3,8 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
+<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
+	
 	<title>Reporteador de Viajes</title>
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" type="text/css" href="css/skeleton.css">
@@ -239,7 +239,7 @@ session_start();
 							 		<?php
 									$ID=$columna["ID"];
 										
-									echo "<a href='ReportePasajero.php?val=$ID;'><button class='blanco' name='mostrar' style='width:10em; height:2em;'>Descargar PDF</button></a>";
+									echo "<a href='ReportePasajero.php?val=$ID'><button class='blanco' name='mostrar' style='width:10em; height:2em;'>Descargar PDF</button></a>";
 								?>				
 						</div>
 

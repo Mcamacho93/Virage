@@ -1,5 +1,3 @@
-
-<link rel="stylesheet" href="css/base.css">
 <?php
 
 require("dompdf/dompdf_config.inc.php");

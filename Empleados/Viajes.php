@@ -73,23 +73,20 @@ include ("conexion.php")
 
 <div class="container">
 	<form name="Usuario" id="Usuario" method="post" action="Transporte.php">
-	<label class="Campos">NOMBRE: </label>	
+	<label class="Campos">EMPRESA : </label>	
 	<input type="text" name="buscar" id="buscar" style="width:300px;" class="ui-autocomplete-input">
 	<br>
-
-	<label class="Campos">FECHA DE SALIDA: </label>
-	<input type="text" placeholder="Fecha" name="Fecha" id="Fecha" readonly> <br>
-	<script type="text/javascript">
-		$('#Fecha').datetimepicker({
-		
-		lang:'es',
-		timepicker:false,
-		format:'Y-m-d',
-		formatDate:'Y-m-d',
-		minDate:0, // yesterday is minimum date
-		});
+	<br>
+	<button type="submit" class="cargar"  name="Transporte">
+	<div class="report">Crear Vuelo</div>
+	<div class="icon"><img src="images/sync.png"></div>
+	</button>
 	</script>
-	<button type="submit" class="cargar" style="width:250px; height:50px;" name="Trans">
+	<button type="submit" class="cargar" name="Hotel">
+	<div class="report">Agregar Hospedaje</div>
+	<div class="icon"><img src="images/sync.png"></div>
+	</button>
+	<button type="submit" class="cargar" name="Hotel">
 	<div class="report">Agregar Transporte</div>
 	<div class="icon"><img src="images/sync.png"></div>
 	</button>
@@ -100,7 +97,7 @@ include ("conexion.php")
 
 $sql = "select CodigoCliente, NombreDeCliente from login order by NombreDeCliente ASC";
 $res = $conexion->query($sql);
-$conexion->close();
+
 $arreglo = array();
 if($res->num_rows==0)
    array_push($arreglo, "No hay datos");
@@ -125,6 +122,49 @@ else{
      });
   });
 </script>
+<br>
+<div class="container titulo">
+	<h1>VUELOS PROGRAMADOS</h1>
+	<hr>
+</div>
+
+<div class="container">
+	<table class="tablas">
+		<tr class="none" id="borde">
+			<th>FOLIO</th>
+			<th>NOMBRE</th>
+			<th>AEROLINEA</th>
+			<th>ORIGEN</th>
+			<th>DESTINO</th>
+			<th>TIPO DE VUELO</th>
+			<th>FECHA DE SALIDA</th>
+			<th>NUMERO DE VUELO</th>			
+		</tr>
+	
+		<?php	
+			$consultaviajes = "Select Folio, Nombre, Apellido_Paterno, Apellido_Materno, Aerolinea, Origen, Destino, TipoDeVuelo, Fecha_Hora,NumeroDeVuelo 
+			from transporte";
+			//$consultaviajes = "select * from transporte";
+			$viajes = $conexion->query($consultaviajes);
+			$conexion->close();
+			while($columnas = $viajes->fetch_array(MYSQLI_ASSOC)){
+
+				echo "<tr>
+						<td>".$columnas['Folio']."</td>
+						<td>".$columnas['Nombre']."  ".$columnas['Apellido_Paterno']."  ".$columnas['Apellido_Materno']."</td>
+						<td>".$columnas['Aerolinea']."</td>
+						<td>".$columnas['Origen']."</td>
+						<td>".$columnas['Destino']."</td>
+						<td>".$columnas['TipoDeVuelo']."</td>
+						<td>".$columnas['Fecha_Hora']."</td>
+						<td>".$columnas['NumeroDeVuelo']."</td>
+					  </tr>";
+			}
+			
+		?>
+	</table>
+</div>
+
 
 
 </body>
